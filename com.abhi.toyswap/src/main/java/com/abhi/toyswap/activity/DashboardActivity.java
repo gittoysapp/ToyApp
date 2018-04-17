@@ -1,9 +1,14 @@
 package com.abhi.toyswap.activity;
 
 import android.app.FragmentManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,8 +16,11 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import com.abhi.toyswap.R;
 import com.abhi.toyswap.Service.MyFirebaseMessagingService;
@@ -28,7 +36,20 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 public class DashboardActivity extends AppCompatActivity {
 
     BottomNavigationViewEx bottomNavigationView;
+    private  TextView mtxtnotificationsbadge;
+    String message;
+    //to enable indicator when message recieves
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
 
+        public void run() {
+            message=MyFirebaseMessagingService.message;
+            if(message!=""){
+                mtxtnotificationsbadge.setVisibility(View.VISIBLE);
+            }
+            handler.postDelayed(this, 5000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +63,32 @@ public class DashboardActivity extends AppCompatActivity {
         bottomNavigationView.enableAnimation(false);
         bottomNavigationView.enableShiftingMode(false);
         bottomNavigationView.enableItemShiftingMode(false);
-        bottomNavigationView.setIconSize(32, 32);
+        bottomNavigationView.setIconSize(28, 28);
+
+        //add the indicator for message notification
+        BottomNavigationMenuView bottomNavigationMenuView = (BottomNavigationMenuView)bottomNavigationView.getChildAt(0);
+        View v=bottomNavigationMenuView.getChildAt(3);
+        BottomNavigationItemView itemView = (BottomNavigationItemView) v;
+
+        //set the icons in centre
+        for (int i = 0; i < bottomNavigationMenuView.getChildCount(); i++) {
+            BottomNavigationItemView item = (BottomNavigationItemView) bottomNavigationMenuView.getChildAt(i);
+
+            //centre icon of bottom navigation
+            item.setPadding(0, 20, 0, 0);
+
+        }
+
+        View badge = LayoutInflater.from(this)
+                .inflate(R.layout.notification_badge, bottomNavigationView, false);
+
+        itemView.addView(badge);
+
+         mtxtnotificationsbadge = (TextView) findViewById(R.id.txtnotificationsbadge);
+//        mtxtnotificationsbadge.setText("5");
+        mtxtnotificationsbadge.setBackgroundResource(R.drawable.custom_circle_shape);
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -100,6 +146,18 @@ public class DashboardActivity extends AppCompatActivity {
 
             startActivity(chatActivityIntent);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        handler.postDelayed(runnable, 5000);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handler.postDelayed(runnable, 5000);
     }
 
     @Override

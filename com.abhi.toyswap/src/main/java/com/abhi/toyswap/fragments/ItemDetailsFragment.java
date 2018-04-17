@@ -84,6 +84,8 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
     private Button submitReportOptionButton;
     private CheckBox[] reportOptionsCheckboxArray;
     private AlertDialog reportDialog;
+    //EditText for comment section
+    EditText tvReportComment;
 
     public ItemDetailsFragment() {
         // Required empty public constructor
@@ -152,7 +154,7 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
 
         likesCardView = (CardView) view.findViewById(R.id.cardview_details_likes);
         dislikesCardView = (CardView) view.findViewById(R.id.cardview_details_dislikes);
-
+        //initialize report comment edittext
         new getTemplateMessagesTask().execute();
         imageLoader.DisplayImage(mProductItem.getUserImage(), userPhotoImageView, false);
 
@@ -704,6 +706,7 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
                 getReportOptionsJson.put("reported_text", selectedReportMessage);
                 getReportOptionsJson.put("reported_id", mProductItem.getProductId());
                 getReportOptionsJson.put("userTimeZone", TimeZone.getDefault().getID());
+
 
             } catch (Exception e) {
                 e.printStackTrace();
