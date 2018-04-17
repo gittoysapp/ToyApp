@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -170,9 +171,13 @@ public class RegistrationActivity extends ActionBarActivity {
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(RegistrationActivity.this);
-            objProgressDialog.setMessage("Please wait..");
+           // objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 
@@ -272,9 +277,13 @@ public class RegistrationActivity extends ActionBarActivity {
 
                     if (resultCode == RESULT_OK) {
                         objProgressDialog = new ProgressDialog(RegistrationActivity.this);
-                        objProgressDialog.setMessage("Please wait..");
+                        // objProgressDialog.setMessage("Please wait..");
+                        objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                         objProgressDialog.setCanceledOnTouchOutside(false);
+
                         objProgressDialog.show();
+                        //add custom progress bar
+                        objProgressDialog.setContentView(R.layout.my_progress);
 
                         AsyncTask.execute(new Runnable() {
                             @Override

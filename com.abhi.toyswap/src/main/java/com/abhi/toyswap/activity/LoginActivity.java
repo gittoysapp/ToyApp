@@ -2,6 +2,8 @@ package com.abhi.toyswap.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -228,9 +230,13 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(LoginActivity.this);
-            objProgressDialog.setMessage("Please wait..");
+           // objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

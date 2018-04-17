@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -403,9 +405,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, O
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
+            //objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

@@ -2,6 +2,8 @@ package com.abhi.toyswap.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -119,9 +121,13 @@ public class ItemMessagesFragment extends Fragment implements View.OnClickListen
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
+            //objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

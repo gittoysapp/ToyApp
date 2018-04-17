@@ -1,6 +1,8 @@
 package com.abhi.toyswap.activity;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -61,9 +63,13 @@ backButton.setOnClickListener(new View.OnClickListener() {
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(ForgetPasswordActivity.this);
-            objProgressDialog.setMessage("Please wait..");
+           // objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

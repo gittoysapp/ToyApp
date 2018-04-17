@@ -3,6 +3,8 @@ package com.abhi.toyswap.fragments;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -199,9 +201,13 @@ public class UserDetailsFragment extends Fragment implements View.OnClickListene
 
                     if (resultCode == getActivity().RESULT_OK) {
                         objProgressDialog = new ProgressDialog(getActivity());
-                        objProgressDialog.setMessage("Please wait..");
+                      //  objProgressDialog.setMessage("Please wait..");
+                        objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                         objProgressDialog.setCanceledOnTouchOutside(false);
+
                         objProgressDialog.show();
+                        //add custom progress bar
+                        objProgressDialog.setContentView(R.layout.my_progress);
                         AsyncTask.execute(new Runnable() {
                             @Override
                             public void run() {
@@ -246,9 +252,13 @@ public class UserDetailsFragment extends Fragment implements View.OnClickListene
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getActivity());
-            objProgressDialog.setMessage("Please wait..");
+            //objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

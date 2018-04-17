@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -693,9 +694,13 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
+            //objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 
@@ -751,9 +756,13 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
+            //objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 
@@ -830,9 +839,13 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
         @Override
         protected void onPreExecute() {
             objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
+           // objProgressDialog.setMessage("Please wait..");
+            objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             objProgressDialog.setCanceledOnTouchOutside(false);
+
             objProgressDialog.show();
+            //add custom progress bar
+            objProgressDialog.setContentView(R.layout.my_progress);
             super.onPreExecute();
         }
 

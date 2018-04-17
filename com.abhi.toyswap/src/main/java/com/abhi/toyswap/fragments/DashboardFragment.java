@@ -2,6 +2,8 @@ package com.abhi.toyswap.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -24,6 +26,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.abhi.toyswap.Connection.Connection;
@@ -71,6 +74,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     ExecutorService executor = Executors.newFixedThreadPool(4);
     private View view;
     DividerItemDecoration dividerItemDecoration;
+    private ProgressBar progressBar;
     private boolean isRefresh=false;
     public static DashboardFragment newInstance() {
         DashboardFragment fragment = new DashboardFragment();
@@ -244,9 +248,13 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
             }
             else{
                 objProgressDialog = new ProgressDialog(getContext());
-                objProgressDialog.setMessage("Please wait..");
+                objProgressDialog.setIndeterminate(true);
+               // objProgressDialog.setMessage("Please wait..");
+                objProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 objProgressDialog.setCanceledOnTouchOutside(false);
+
                 objProgressDialog.show();
+                objProgressDialog.setContentView(R.layout.my_progress);
             }
 
             super.onPreExecute();
@@ -303,7 +311,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
             try {
                 //set isRefresh to false
                 isRefresh=false;
-                
+
                 JSONObject jsonObj = new JSONObject(result);
                 ProductItem item;
                 JSONObject itemJsonObject;

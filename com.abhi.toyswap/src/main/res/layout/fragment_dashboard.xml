@@ -151,7 +151,10 @@
         android:layout_below="@+id/linear_dashboard_search_layout"
         android:background="@color/recylcerview_backgroundcolor"
         android:numColumns="2"/>
+
+
     </android.support.v4.widget.SwipeRefreshLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_2"
