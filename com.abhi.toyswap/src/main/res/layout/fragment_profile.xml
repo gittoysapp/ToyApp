@@ -1,0 +1,365 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_light_grey"
+    android:gravity="center_horizontal"
+    tools:context="com.abhi.toyswap.fragments.DashboardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/app_base_color"
+        android:gravity="center"
+        android:paddingBottom="@dimen/space_7"
+        android:paddingTop="@dimen/space_7"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/profile_title"
+            android:textSize="@dimen/text_size_20"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/image_profile_logout"
+            android:layout_width="@dimen/space_25"
+            android:layout_height="@dimen/space_25"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/space_10"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_exit" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_profile_user_image"
+        android:layout_width="@dimen/space_60"
+        android:layout_height="@dimen/space_60"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_10"
+        android:background="@color/transparent"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1"
+        app:cardCornerRadius="@dimen/space_30">
+
+        <ImageView
+            android:id="@+id/image_profile_user_photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY" />
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linear_profile_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_below="@+id/cardview_profile_user_image"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/text_profile_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abhishek Gupta"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_19" />
+
+        <ImageView
+            android:id="@+id/image_profile_edit_profile"
+            android:layout_width="@dimen/space_20"
+            android:layout_height="@dimen/space_20"
+            android:layout_alignBottom="@+id/text_profile_username"
+            android:layout_alignTop="@+id/text_profile_username"
+            android:layout_marginLeft="@dimen/space_10"
+            android:scaleType="fitCenter"
+
+            android:src="@drawable/icon_edit_profile" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text_profile_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_profile_username"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/icon_location"
+        android:drawablePadding="@dimen/space_5"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14" />
+
+    <ImageView
+        android:id="@+id/image_profile_gridview"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linear_profile_username"
+        android:layout_marginLeft="@dimen/space_20"
+        android:background="@drawable/icon_gridview"
+        android:backgroundTint="@color/app_base_color" />
+
+    <ImageView
+        android:id="@+id/image_profile_listview"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linear_profile_username"
+        android:layout_marginRight="@dimen/space_20"
+        android:background="@drawable/icon_list"
+        android:backgroundTint="@color/app_base_color" />
+
+
+    <RelativeLayout
+        android:id="@+id/relative_profile_likes_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginRight="@dimen/space_20"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_toLeftOf="@+id/cardview_profile_user_image"
+        android:gravity="center"
+        android:paddingBottom="@dimen/space_10"
+        android:paddingTop="@dimen/space_10">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview_profile_likes"
+            android:layout_width="@dimen/space_25"
+            android:layout_height="@dimen/space_25"
+            android:layout_centerHorizontal="true"
+            android:background="@color/appgrey"
+            android:backgroundTint="@color/app_base_color"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1"
+            app:cardCornerRadius="@dimen/space_13">
+
+            <ImageView
+                android:id="@+id/image_profile_likes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/space_5"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_likes" />
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_profile_number_of_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_25"
+            android:layout_below="@+id/cardview_profile_likes"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_profile_dislikes_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="@dimen/space_10"
+        android:layout_marginTop="@dimen/space_15"
+        android:layout_toRightOf="@+id/cardview_profile_user_image"
+        android:gravity="center"
+        android:paddingBottom="@dimen/space_10"
+        android:paddingTop="@dimen/space_10">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview_profile_dislikes"
+            android:layout_width="@dimen/space_25"
+            android:layout_height="@dimen/space_25"
+            android:layout_centerHorizontal="true"
+            android:background="@color/appgrey"
+            android:backgroundTint="@color/app_base_color"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1"
+            app:cardCornerRadius="@dimen/space_13">
+
+            <ImageView
+                android:id="@+id/image_profile_dislikes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/space_5"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_dislikes" />
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_profile_number_of_dislikes"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_25"
+            android:layout_below="@+id/cardview_profile_dislikes"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_profile_item_types"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:layout_below="@+id/image_profile_gridview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:background="@color/app_base_color"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_profile_item_type_all"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.80"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view_profile_divider1"
+            android:layout_width="@dimen/space_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/app_light_grey" />
+
+        <TextView
+            android:id="@+id/text_profile_item_type_sold"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.80"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/text_size_12" />
+
+        <View
+            android:id="@+id/view_profile_divider2"
+            android:layout_width="@dimen/space_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/app_light_grey" />
+
+        <TextView
+            android:id="@+id/text_profile_item_type_selling"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.9"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/text_size_12" />
+
+        <View
+            android:id="@+id/view_profile_divider3"
+            android:layout_width="@dimen/space_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/app_light_grey" />
+
+        <TextView
+            android:id="@+id/text_profile_item_type_bidding"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.95"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/text_size_12" />
+
+        <View
+            android:id="@+id/view_profile_divider4"
+            android:layout_width="@dimen/space_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/space_10"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@color/app_light_grey" />
+
+        <TextView
+            android:id="@+id/text_profile_item_type_swapping"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/text_size_12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_profile_no_items_available"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/linear_profile_item_types"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_dashboard_no_item_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_5"
+            android:src="@drawable/icon_error" />
+
+        <TextView
+            android:id="@+id/text_dashboard_no_item_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_item_available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerview_profile_items_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_profile_item_types"
+        android:background="@color/app_light_grey"
+        android:horizontalSpacing="@dimen/space_2"
+        android:numColumns="2"
+        android:verticalSpacing="@dimen/space_2"
+        android:visibility="visible" />
+
+
+</RelativeLayout>

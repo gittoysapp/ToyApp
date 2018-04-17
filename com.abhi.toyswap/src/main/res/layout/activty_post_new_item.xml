@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="top"
+    android:padding="@dimen/space_2">
+
+    <TextureView
+        android:id="@+id/frame_layout_post_new_item_camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/image_post_new_item_gallery"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:background="@drawable/camera_preview_background" />
+
+
+    <ImageView
+        android:id="@+id/image_post_new_item_preview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_260"
+        android:scaleType="fitXY"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/image_post_new_item_close"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/space_20"
+        android:layout_marginRight="@dimen/space_20"
+        android:src="@drawable/icon_cross" />
+
+    <ImageView
+        android:id="@+id/image_post_new_item_gallery"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_above="@+id/view_post_new_item_divider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_15"
+        android:src="@drawable/icon_photo_gallery"
+        android:visibility="visible" />
+
+
+    <View
+        android:id="@+id/view_post_new_item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_0.5"
+        android:layout_above="@+id/text_post_new_item_camera_description"
+        android:layout_marginLeft="@dimen/space_30"
+        android:layout_marginRight="@dimen/space_30"
+        android:layout_marginTop="@dimen/space_15"
+        android:background="@color/appgrey" />
+
+    <TextView
+        android:id="@+id/text_post_new_item_camera_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relative_post_new_item_bottom_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_15"
+        android:gravity="center"
+        android:text="@string/camera_description"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_13"
+        android:textStyle="normal"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/relative_post_new_item_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/space_15">
+
+        <ImageView
+            android:id="@+id/image_post_new_item_capture"
+            android:layout_width="@dimen/space_50"
+            android:layout_height="@dimen/space_50"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/space_20"
+            android:src="@drawable/icon_capture_image"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button_post_new_item_retake"
+            android:layout_width="@dimen/space_150"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/space_10"
+            android:background="@drawable/button_background"
+            android:paddingBottom="@dimen/space_2"
+            android:paddingTop="@dimen/space_2"
+            android:text="@string/retake"
+            android:textColor="@color/white"
+
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/button_post_new_item_post"
+            android:layout_width="@dimen/space_150"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_post_new_item_retake"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_background"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingTop="@dimen/space_5"
+            android:text="@string/post"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

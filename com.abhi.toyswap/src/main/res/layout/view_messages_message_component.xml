@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_10">
+
+
+    <ImageView
+        android:id="@+id/image_messages_view_component_user_image"
+        android:layout_width="@dimen/space_90"
+        android:layout_height="@dimen/space_60"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/space_7"
+        android:layout_marginRight="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_7"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_unfavourite" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_messages_view_component_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/image_messages_view_component_user_image"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_messages_view_component_itemname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/space_5"
+            android:text="Product Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14" />
+
+
+        <TextView
+            android:id="@+id/text_messages_view_component_itemowner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="By sheenam garg"
+            android:textColor="@color/app_base_color"
+            android:textSize="@dimen/text_size_11" />
+
+
+    </LinearLayout>
+</RelativeLayout>

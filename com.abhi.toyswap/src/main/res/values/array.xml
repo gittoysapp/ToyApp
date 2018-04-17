@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_options">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>Art and Craft Toys</item>
+        <item>Dolls</item>
+        <item>Educational Toys</item>
+        <item>Electronics Toys</item>
+        <item>Stuff Toys</item>
+        <item>Sports Toys</item>
+        <item>Traditional Toys</item>
+        <item>Toy Vehicles</item>
+        <item>Water Toys</item>
+    </string-array>
+
+    <string-array name="toys_stypes">
+        <item>Buy</item>
+        <item>Swap</item>
+        <item>Bid</item>
+        <item>All</item>
+    </string-array>
+
+
+    <string-array name="posted_within">
+        <item>Last one day</item>
+        <item>Last 7 days</item>
+        <item>Last 30 days</item>
+    </string-array>
+
+    <string-array name="age_groups">
+        <item>Select Age Group</item>
+        <item>All</item>
+        <item>0-3 Years</item>
+        <item>4-6 Years</item>
+        <item>6-10 Years</item>
+        <item>11-15 Years</item>
+    </string-array>
+
+    <integer-array name="age_groups_id">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+
+    </integer-array>
+
+</resources>

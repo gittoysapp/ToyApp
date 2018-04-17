@@ -1,0 +1,324 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_color"
+    android:gravity="center">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:background="@color/app_base_color"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/white">
+        <ImageView
+            android:id="@+id/imageview_filter_back"
+            android:layout_width="@dimen/space_40"
+            android:layout_height="@dimen/space_40"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/space_5"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_back" />
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/filters_title"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relative_filters_bottom_bar"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_15"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_15"
+                android:text="@string/categories_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linear_filters_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_light_grey"
+                android:divider="?android:attr/dividerHorizontal"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_10"
+                android:text="@string/price_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <com.abhi.toyswap.CustomViews.RangeSeekBar
+                android:id="@+id/slidingbar_filters_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_light_grey"
+                custom:absoluteMaxValue="1000"
+                custom:absoluteMinValue="0"
+                custom:leftKeyword="$"
+                custom:rightKeyword="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_10"
+                android:text="@string/agerange_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <com.abhi.toyswap.CustomViews.RangeSeekBar
+                android:id="@+id/slidingbar_filters_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_light_grey"
+                custom:absoluteMaxValue="15"
+                custom:absoluteMinValue="0"
+                custom:leftKeyword=""
+                custom:rightKeyword="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_10"
+                android:text="@string/distance_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <com.abhi.toyswap.CustomViews.RangeSeekBar
+                android:id="@+id/slidingbar_filters_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_light_grey"
+                custom:absoluteMaxValue="10"
+                custom:absoluteMinValue="0"
+                custom:leftKeyword=""
+                custom:rightKeyword="Kms"
+                custom:singleThumb="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_15"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_15"
+                android:text="@string/search_toys_for_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+
+            <CheckBox
+                android:id="@+id/checkbox_filters_toy_type_buy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_group_divider"
+                android:button="@null"
+                android:drawableRight="@android:drawable/btn_star"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:paddingTop="@dimen/space_5"
+                android:tag="1"
+                android:text="@string/buy"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="normal" />
+
+            <CheckBox
+                android:id="@+id/checkbox_filters_toy_type_swap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_group_divider"
+                android:button="@null"
+                android:drawableRight="@android:drawable/btn_star"
+                android:tag="2"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:paddingTop="@dimen/space_5"
+                android:text="@string/swap"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="normal" />
+
+            <CheckBox
+                android:id="@+id/checkbox_filters_toy_type_bid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_group_divider"
+                android:button="@null"
+                android:tag="3"
+                android:drawableRight="@android:drawable/btn_star"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:paddingTop="@dimen/space_5"
+                android:text="@string/bid"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="normal" />
+
+            <CheckBox
+                android:id="@+id/checkbox_filters_toy_type_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_group_divider"
+                android:button="@null"
+                android:drawableRight="@android:drawable/btn_star"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingRight="@dimen/space_20"
+                android:paddingTop="@dimen/space_5"
+                android:text="@string/all"
+                android:textSize="@dimen/text_size_12"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/space_15"
+                android:paddingLeft="@dimen/space_20"
+                android:paddingTop="@dimen/space_15"
+                android:text="@string/posted_within_title"
+                android:textColor="@color/app_base_color"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup_filters_posted_within"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_light_grey"
+                android:divider="?android:attr/dividerHorizontal"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_filters_posted_within_last_one_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableRight="@android:drawable/btn_radio"
+                    android:paddingLeft="@dimen/space_20"
+                    android:paddingRight="@dimen/space_20"
+                    android:tag="0"
+                    android:text="@string/posted_within_last_one_day"
+                    android:textSize="@dimen/text_size_12"
+                    android:textStyle="normal" />
+
+
+                <RadioButton
+                    android:id="@+id/radiobutton_filters_posted_within_last_7_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableRight="@android:drawable/btn_radio"
+                    android:paddingLeft="@dimen/space_20"
+                    android:paddingRight="@dimen/space_20"
+                    android:tag="7"
+                    android:text="@string/posted_within_last_7_days"
+                    android:textSize="@dimen/text_size_12"
+                    android:textStyle="normal" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_filters_posted_within_last_30_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableRight="@android:drawable/btn_radio"
+                    android:paddingLeft="@dimen/space_20"
+                    android:paddingRight="@dimen/space_20"
+                    android:tag="30"
+                    android:text="@string/posted_within_last_30_days"
+                    android:textSize="@dimen/text_size_12"
+                    android:textStyle="normal" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/relative_filters_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/app_base_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_10"
+        android:paddingLeft="@dimen/space_10"
+        android:paddingRight="@dimen/space_10">
+
+        <Button
+            android:id="@+id/button_filters_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/search_edittext_background"
+            android:paddingBottom="@dimen/space_10"
+            android:paddingTop="@dimen/space_10"
+            android:text="@string/button_reset"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button_filters_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_weight="1"
+            android:background="@drawable/search_edittext_background"
+            android:paddingBottom="@dimen/space_10"
+            android:paddingTop="@dimen/space_10"
+            android:text="@string/button_apply"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

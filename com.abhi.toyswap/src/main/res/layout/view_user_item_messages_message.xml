@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/space_15"
+    android:paddingRight="@dimen/space_10">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_item_messages_user_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/space_7"
+        android:layout_marginRight="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_7"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1"
+        app:cardCornerRadius="@dimen/space_30">
+
+        <ImageView
+            android:id="@+id/image_item_messages_view_component_user_image"
+            android:layout_width="@dimen/space_60"
+            android:layout_height="@dimen/space_60"
+
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_unfavourite" />
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linear_item_messages_view_component_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/cardview_item_messages_user_image"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_item_messages_view_component_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/space_5"
+            android:text="Product Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_13"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/text_item_messages_view_component_lastmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="center_vertical"
+            android:text="By sheenam garg"
+            android:textColor="@color/app_base_color"
+            android:textSize="@dimen/text_size_12" />
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_item_messages_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_15"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="@dimen/space_20">
+
+        <TextView
+            android:id="@+id/text_view_item_messages_count"
+            android:layout_width="@dimen/space_40"
+            android:layout_height="@dimen/space_40"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

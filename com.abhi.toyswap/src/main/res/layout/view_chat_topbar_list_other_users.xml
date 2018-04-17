@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/space_10"
+    android:paddingBottom="@dimen/space_10"
+    android:paddingLeft="@dimen/space_10"
+    android:paddingRight="@dimen/space_10"
+    android:gravity="center_horizontal">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_chat_topbar_list_others_thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        app:cardCornerRadius="@dimen/space_30">
+
+    <ImageView
+        android:id="@+id/image_chat_topbar_list_others_thumbnail"
+        android:layout_width="@dimen/space_60"
+        android:layout_height="@dimen/space_60"
+        android:scaleType="fitXY"/>
+    </android.support.v7.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/text_chat_topbar_list_others_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_5"
+        android:layout_below="@+id/cardview_chat_topbar_list_others_thumbnail"
+        android:text="Product Name"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_11" />
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<resources>
+
+    <declare-styleable name="RangeSeekBar">
+        <attr name="absoluteMinValue" format="integer|float"/>
+        <attr name="absoluteMaxValue" format="integer|float"/>
+        <attr name="leftKeyword" format="string" />
+        <attr name="rightKeyword" format="string" />
+        <attr name="singleThumb" format="boolean"/>
+    </declare-styleable>
+</resources>

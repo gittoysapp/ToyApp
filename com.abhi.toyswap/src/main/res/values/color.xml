@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appgreen">#94c0bf</color>
+    <color name="appgrey">#9c9c9c</color>
+    <color name="appgreydark">#3b3b3b</color>
+    <color name="appgreydivider">#bbbbbb</color>
+
+    <color name="app_light_grey">#ececec</color>
+    <color name="white_grey">#f4f5f7</color>
+
+    <color name="appgrey2">#D8D7D7</color>
+
+    <color name="white">#ffffff</color>
+    <color name="hint_text_color">#e1ecfe</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent2">#66000000</color>
+    <color name="lightblue">#e1ecfe</color>
+
+    <color name="app_base_color">#9ABFFC</color>
+    <color name="app_base_color_dark">#8cb3f3</color>
+    <color name="dark_blue_login">#404E72</color>
+    <color name="dark_blue">#bdd5fd</color>
+    <color name="border_color">#d3d3d3</color>
+    <color name="edittext_color">#868686</color>
+
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="inactive_chat">#C1C1C1</color>
+    <color name="active_chat">#3B3B3B</color>
+    <color name="recylcerview_backgroundcolor">#eeeeee</color>
+
+
+
+
+</resources>

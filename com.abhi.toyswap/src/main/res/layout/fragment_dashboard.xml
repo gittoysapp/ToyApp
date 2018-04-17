@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_light_grey"
+    android:gravity="center_horizontal"
+    tools:context="com.abhi.toyswap.fragments.DashboardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_centerHorizontal="true"
+        android:background="@color/app_base_color"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/dashboard_title"
+            android:textSize="@dimen/text_size_20"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="center"
+        app:tabGravity="center"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/app_base_color_dark"
+        app:tabIndicatorColor="@color/app_light_grey"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="@color/appgrey" />
+
+
+    <RelativeLayout
+        android:id="@+id/linear_dashboard_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab_layout"
+        android:background="@color/white_grey"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/space_5"
+        android:paddingTop="@dimen/space_10">
+
+        <ImageView
+            android:id="@+id/image_dashboard_filters"
+            android:layout_width="@dimen/space_30"
+            android:layout_height="@dimen/space_30"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_20"
+            android:src="@drawable/icon_filters" />
+
+        <EditText
+            android:id="@+id/edit_dashboard_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_10"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_toLeftOf="@+id/image_dashboard_gridview"
+            android:layout_toRightOf="@+id/image_dashboard_filters"
+            android:background="@drawable/search_edittext_background"
+            android:drawableRight="@drawable/search_icon"
+            android:hint="@string/dashboard_search_hint"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:padding="@dimen/space_10"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/image_dashboard_gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_10"
+            android:layout_toLeftOf="@+id/image_dashboard_listview"
+            android:src="@drawable/icon_gridview" />
+
+        <ImageView
+            android:id="@+id/image_dashboard_listview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_10"
+            android:src="@drawable/icon_list" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/image_dashboard_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linear_dashboard_search_layout"
+        android:background="@drawable/shadow_image"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_dashboard_no_items_available"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_dashboard_no_item_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_5"
+            android:src="@drawable/icon_error" />
+
+        <TextView
+            android:id="@+id/text_dashboard_no_item_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_item_available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/gridview_dashboard_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_dashboard_search_layout"
+        android:background="@color/recylcerview_backgroundcolor"
+        android:numColumns="2"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2"
+        android:layout_below="@+id/gridview_dashboard_container"
+        android:background="@color/appgreydivider" />
+
+</RelativeLayout>

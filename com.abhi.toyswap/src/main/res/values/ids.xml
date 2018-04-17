@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="product_id" type="id" />
+    <item name="item_id" type="id" />
+    <item name="image_id" type="id" />
+    <item name="image_is_already_pushed" type="id" />
+
+    <item name="second_user_id" type="id" />
+    <item name="second_user_image" type="id" />
+
+    <item name="is_favourite" type="id" />
+
+</resources>

@@ -1,0 +1,557 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_light_grey"
+    tools:context="com.abhi.toyswap.fragments.ItemDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_base_color"
+        android:gravity="center_vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white">
+
+        <ImageView
+            android:id="@+id/imageview_new_item_details_back"
+            android:layout_width="@dimen/space_40"
+            android:layout_height="@dimen/space_40"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/space_5"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/item_details"
+            android:textSize="@dimen/text_size_20"
+            android:textStyle="normal" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:clipToPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/linear_new_item_photos_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                    <ImageView
+                        android:id="@+id/image_new_item_photo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_60"
+                        android:layout_marginRight="@dimen/space_1"
+                        android:layout_marginTop="@dimen/space_7"
+                        android:background="@color/appgrey"
+                        android:tag="101" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview_new_item_delete1"
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="right|top"
+                        android:background="@color/appgrey"
+                        android:backgroundTint="@color/app_base_color"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/space_12">
+
+                        <ImageView
+                            android:id="@+id/image_new_item_photo1_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icon_clear_text" />
+                    </android.support.v7.widget.CardView>
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_new_item_photo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_60"
+                        android:layout_marginRight="@dimen/space_1"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:background="@color/appgrey"
+                        android:src="@drawable/icon_photo"
+                        android:tag="102" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview_new_item_delete2"
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="right|top"
+                        android:background="@color/appgrey"
+                        android:backgroundTint="@color/app_base_color"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/space_12">
+
+                        <ImageView
+                            android:id="@+id/image_new_item_photo2_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icon_clear_text" />
+                    </android.support.v7.widget.CardView>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_new_item_photo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_60"
+                        android:layout_marginRight="@dimen/space_1"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:background="@color/appgrey"
+                        android:src="@drawable/icon_photo"
+                        android:tag="103" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview_new_item_delete3"
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="right|top"
+                        android:background="@color/appgrey"
+                        android:backgroundTint="@color/app_base_color"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/space_12">
+
+                        <ImageView
+                            android:id="@+id/image_new_item_photo3_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icon_clear_text" />
+                    </android.support.v7.widget.CardView>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_new_item_photo4"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_60"
+                        android:layout_marginRight="@dimen/space_1"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:background="@color/appgrey"
+                        android:src="@drawable/icon_photo"
+                        android:tag="104" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview_new_item_delete4"
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="right|top"
+                        android:background="@color/appgrey"
+                        android:backgroundTint="@color/app_base_color"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/space_12">
+
+                        <ImageView
+                            android:id="@+id/image_new_item_photo4_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icon_clear_text" />
+                    </android.support.v7.widget.CardView>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_new_item_photo5"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_60"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_weight="1"
+                        android:background="@color/appgrey"
+                        android:src="@drawable/icon_photo"
+                        android:tag="105" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardview_new_item_delete5"
+                        android:layout_width="@dimen/space_24"
+                        android:layout_height="@dimen/space_24"
+                        android:layout_gravity="right|top"
+                        android:background="@color/appgrey"
+                        android:backgroundTint="@color/app_base_color"
+                        android:innerRadius="0dp"
+                        android:shape="ring"
+                        android:thicknessRatio="1"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/space_12">
+
+                        <ImageView
+                            android:id="@+id/image_new_item_photo5_delete"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/icon_clear_text" />
+                    </android.support.v7.widget.CardView>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_new_item_checkboxes_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_new_item_photos_layout"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_5"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/check_new_item_all"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linear_new_item_photos_layout"
+                    android:buttonTint="@color/app_base_color"
+                    android:layout_weight="1"
+                    android:text="@string/all" />
+
+                <CheckBox
+                    android:id="@+id/check_new_item_swap"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linear_new_item_photos_layout"
+                    android:buttonTint="@color/app_base_color"
+                    android:layout_weight="1"
+                    android:tag="2"
+                    android:text="@string/swap" />
+
+                <CheckBox
+                    android:id="@+id/check_new_item_sell"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linear_new_item_photos_layout"
+                    android:buttonTint="@color/app_base_color"
+                    android:layout_weight="1"
+                    android:tag="1"
+                    android:text="@string/sell" />
+
+                <CheckBox
+                    android:id="@+id/check_new_item_bid"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linear_new_item_photos_layout"
+                    android:buttonTint="@color/app_base_color"
+                    android:layout_weight="1"
+                    android:tag="3"
+                    android:text="@string/bid" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edit_new_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_new_item_checkboxes_layout"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/light_grey_background"
+                android:drawableRight="@drawable/icon_price"
+                android:hint="@string/item_price"
+                android:inputType="numberDecimal"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_10" />
+
+
+            <EditText
+                android:id="@+id/edit_new_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_new_item_price"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/light_grey_background"
+                android:drawableRight="@drawable/icon_item"
+                android:hint="@string/item_name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_10" />
+
+            <Spinner
+                android:id="@+id/spinner_new_item_agegroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_new_item_name"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/light_grey_background"
+                android:entries="@array/gender_options"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_5" />
+
+            <Spinner
+                android:id="@+id/spinner_new_item_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_new_item_agegroup"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/light_grey_background"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_5" />
+
+            <EditText
+                android:id="@+id/edit_new_item_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_new_item_category"
+                android:layout_marginBottom="@dimen/space_10"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_10"
+                android:layout_marginTop="@dimen/space_10"
+                android:background="@drawable/light_grey_background"
+                android:hint="@string/description"
+                android:lines="5"
+                android:maxLines="5"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_5" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup_new_item_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_new_item_description"
+                android:layout_marginLeft="@dimen/space_10"
+                android:divider="?android:attr/dividerHorizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_new_item_gps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space_5"
+                    android:buttonTint="@color/appgrey"
+                    android:text="@string/gps_location"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/appgrey" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_new_item_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space_5"
+                    android:buttonTint="@color/appgrey"
+                    android:text="@string/custom_address"
+                    android:textSize="@dimen/text_size_12"
+                    android:textColor="@color/appgrey" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_new_item_custom_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:buttonTint="@color/appgrey"
+                    android:checked="true"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="@string/custom_location"
+                    android:textColor="@color/appgrey" />
+            </RadioGroup>
+            <LinearLayout
+                android:id="@+id/linear_new_item_custom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radiogroup_new_item_location"
+                android:layout_margin="@dimen/space_10"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+            <EditText
+                android:id="@+id/edit_new_item_custom_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/light_grey_background"
+                android:hint="@string/custom_location"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_10"
+                android:paddingRight="@dimen/space_10"
+                android:paddingTop="@dimen/space_10" />
+            <LinearLayout
+                android:id="@+id/linear_new_item_custom_address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/edit_new_item_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/light_grey_background"
+                    android:hint="@string/address"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/space_10"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10" />
+
+                <EditText
+                    android:id="@+id/edit_new_item_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/light_grey_background"
+                    android:hint="@string/city"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/space_10"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10" />
+
+                <EditText
+                    android:id="@+id/edit_new_item_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/light_grey_background"
+                    android:hint="@string/state"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/space_10"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10" />
+
+                <EditText
+                    android:id="@+id/edit_new_item_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/light_grey_background"
+                    android:hint="@string/country"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/space_10"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10" />
+
+                <EditText
+                    android:id="@+id/edit_new_item_postcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:background="@drawable/light_grey_background"
+                    android:hint="@string/postcode"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/space_10"
+                    android:paddingLeft="@dimen/space_10"
+                    android:paddingRight="@dimen/space_10"
+                    android:paddingTop="@dimen/space_10" />
+            </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/button_new_item_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_new_item_custom_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/space_10"
+                android:background="@drawable/button_background"
+                android:paddingBottom="@dimen/space_5"
+                android:paddingTop="@dimen/space_5"
+
+                android:text="@string/done"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

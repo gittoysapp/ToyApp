@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_base_color"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_base_color"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+
+            >
+
+
+            <ImageView
+                android:id="@+id/image_registration_logo"
+                android:layout_width="@dimen/space_120"
+                android:layout_height="@dimen/space_120"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/app_top_logo" />
+
+            <TextView
+                android:id="@+id/text_registration_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/edit_registration_firstname"
+                android:layout_below="@+id/image_registration_logo"
+                android:layout_marginBottom="@dimen/space_10"
+                android:layout_marginLeft="@dimen/space_5"
+
+                android:layout_marginTop="@dimen/space_20"
+                android:text="@string/registration_title"
+                android:textColor="@color/appgreydark"
+                android:textSize="@dimen/text_size_16"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/text_registration_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/image_registration_logo"
+                android:layout_marginBottom="@dimen/space_10"
+                android:layout_marginRight="@dimen/space_20"
+
+                android:layout_marginTop="@dimen/space_20"
+                android:text="@string/registration_signin"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12" />
+
+            <EditText
+                android:id="@+id/edit_registration_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_registration_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_0"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+                android:backgroundTint="@color/white"
+                android:focusable="true"
+                android:gravity="center|left"
+                android:hint="@string/registration_firstname"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_5"
+                android:paddingTop="@dimen/space_10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/app_light_grey"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/edit_registration_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_registration_firstname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_0"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+
+                android:backgroundTint="@color/white"
+                android:gravity="center|left"
+                android:hint="@string/registration_lastname"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_5"
+                android:paddingTop="@dimen/space_10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/app_light_grey"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/text_registration_profileimage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_registration_lastname"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_0"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+                android:backgroundTint="@color/white"
+                android:drawableRight="@drawable/icon_camera"
+                android:drawableTint="@color/white"
+                android:gravity="center|left"
+                android:hint="@string/registration_profileimage"
+                android:padding="@dimen/space_10"
+                android:paddingLeft="@dimen/space_5"
+                android:textColor="@color/black"
+                android:textColorHint="@color/app_light_grey"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/edit_registration_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_registration_profileimage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/space_0"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+
+                android:backgroundTint="@color/white"
+                android:gravity="center|left"
+                android:hint="@string/registration_email"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_5"
+                android:paddingTop="@dimen/space_10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/app_light_grey"
+                android:textSize="@dimen/text_size_16" />
+
+            <EditText
+                android:id="@+id/edit_registration_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_registration_email"
+                android:layout_marginLeft="@dimen/space_20"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_marginTop="@dimen/space_20"
+
+                android:backgroundTint="@color/white"
+                android:gravity="center|left"
+                android:hint="@string/registration_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_5"
+                android:paddingTop="@dimen/space_10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/app_light_grey"
+                android:textSize="@dimen/text_size_16" />
+
+            <RelativeLayout
+                android:id="@+id/relative_registration_agreeme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_registration_password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_20">
+
+            <CheckBox
+                android:id="@+id/check_registration_agreeme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:textSize="@dimen/text_size_11"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/text_registration_agreeme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/check_registration_agreeme"
+                android:layout_alignTop="@+id/check_registration_agreeme"
+                android:layout_alignBottom="@+id/check_registration_agreeme"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:text="@string/agreeme"
+                android:textSize="@dimen/text_size_11" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button_registration_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative_registration_agreeme"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/space_20"
+                android:layout_marginLeft="@dimen/space_0"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/dark_blue_login"
+                android:text="@string/registration_register"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

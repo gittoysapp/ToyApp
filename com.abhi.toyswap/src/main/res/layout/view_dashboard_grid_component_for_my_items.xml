@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/image_dashboard_grid_component_my_items_product_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_160"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/relative_dashboard_grid_component_my_items_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/dashboard_gridcomponent_topbar_background"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_5">
+
+
+        <TextView
+            android:id="@+id/text_dashboard_grid_component_my_items_productname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_10"
+            android:text="Product Name"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/text_dashboard_grid_component_my_items_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_5"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+</RelativeLayout>

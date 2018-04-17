@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_15"
+        android:layout_marginLeft="@dimen/space_15"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textview_report_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_base_color"
+            android:paddingBottom="@dimen/space_10"
+            android:paddingLeft="@dimen/space_15"
+            android:paddingRight="@dimen/space_10"
+            android:paddingTop="@dimen/space_10"
+            android:text="@string/report_title"
+            android:textColor="@color/white_grey"
+            android:textSize="@dimen/text_size_15"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/radiogroup_report_dialog_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_report_title"
+            android:divider="?android:attr/dividerHorizontal"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_report_dialog_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radiogroup_report_dialog_options"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/space_20"
+            android:layout_marginTop="@dimen/space_25"
+            android:background="@drawable/button_background"
+            android:paddingBottom="@dimen/space_10"
+            android:paddingLeft="@dimen/space_50"
+            android:paddingRight="@dimen/space_50"
+            android:paddingTop="@dimen/space_10"
+            android:textStyle="bold"
+            android:text="@string/submit"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_report_dialog_close"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_30"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/transparent"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        android:thicknessRatio="1"
+        app:cardCornerRadius="@dimen/space_15">
+
+        <ImageView
+            android:id="@+id/image_new_item_photo5_delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_clear_text"
+            android:tint="@color/app_base_color" />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
