@@ -137,6 +137,13 @@
 
     </LinearLayout>
 
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_dashboard_search_layout"
+        >
     <android.support.v7.widget.RecyclerView
         android:id="@+id/gridview_dashboard_container"
         android:layout_width="match_parent"
@@ -144,10 +151,11 @@
         android:layout_below="@+id/linear_dashboard_search_layout"
         android:background="@color/recylcerview_backgroundcolor"
         android:numColumns="2"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_2"
-        android:layout_below="@+id/gridview_dashboard_container"
+        android:layout_below="@+id/swipeContainer"
         android:background="@color/appgreydivider" />
 
 </RelativeLayout>

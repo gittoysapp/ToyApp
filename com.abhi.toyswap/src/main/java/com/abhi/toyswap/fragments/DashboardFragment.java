@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -51,6 +52,7 @@ import java.util.concurrent.Executors;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener, OnItemClickInterface {
 
+    private SwipeRefreshLayout swipeContainer;
     private ImageView filtersImageView;
     private ImageView gridViewImageView;
     private ImageView listViewImageView;
@@ -69,7 +71,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     ExecutorService executor = Executors.newFixedThreadPool(4);
     private View view;
     DividerItemDecoration dividerItemDecoration;
-
+    private boolean isRefresh=false;
     public static DashboardFragment newInstance() {
         DashboardFragment fragment = new DashboardFragment();
 
@@ -103,6 +105,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
 
             gridLayoutManager = new GridLayoutManager(getContext(), 2);
             linearLayoutManager = new LinearLayoutManager(getContext());
+
+            // Lookup the swipe container view
+            swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
 
             objGpsTracker = GPSTracker.getInstance(getContext(), getActivity());
             searchEditText.addTextChangedListener(new TextWatcher() {
@@ -178,6 +183,17 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
                 }
             });
         }
+
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                isRefresh=true;
+                new getItemsTask().execute();
+            }
+        });
         return view;
     }
 
@@ -223,10 +239,16 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
     class getItemsTask extends AsyncTask<Void, Void, String> {
         @Override
         protected void onPreExecute() {
-            objProgressDialog = new ProgressDialog(getContext());
-            objProgressDialog.setMessage("Please wait..");
-            objProgressDialog.setCanceledOnTouchOutside(false);
-            objProgressDialog.show();
+            if(isRefresh){
+
+            }
+            else{
+                objProgressDialog = new ProgressDialog(getContext());
+                objProgressDialog.setMessage("Please wait..");
+                objProgressDialog.setCanceledOnTouchOutside(false);
+                objProgressDialog.show();
+            }
+
             super.onPreExecute();
         }
 
@@ -279,6 +301,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
         @Override
         protected void onPostExecute(String result) {
             try {
+                //set isRefresh to false
+                isRefresh=false;
+                
                 JSONObject jsonObj = new JSONObject(result);
                 ProductItem item;
                 JSONObject itemJsonObject;
@@ -292,6 +317,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener,
                 if (jsonObj.getString("status").equals("200")
                         && jsonObj.getString("status_message").equalsIgnoreCase("Record Found")) {
                     noRecordsFoundLayout.setVisibility(View.GONE);
+                    swipeContainer.setRefreshing(false);
                     if (productsList != null) {
                         productsList.clear();
                     } else {
