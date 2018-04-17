@@ -85,7 +85,7 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
     private CheckBox[] reportOptionsCheckboxArray;
     private AlertDialog reportDialog;
     //EditText for comment section
-    EditText tvReportComment;
+    EditText etReportComment;
 
     public ItemDetailsFragment() {
         // Required empty public constructor
@@ -154,7 +154,9 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
 
         likesCardView = (CardView) view.findViewById(R.id.cardview_details_likes);
         dislikesCardView = (CardView) view.findViewById(R.id.cardview_details_dislikes);
+
         //initialize report comment edittext
+
         new getTemplateMessagesTask().execute();
         imageLoader.DisplayImage(mProductItem.getUserImage(), userPhotoImageView, false);
 
@@ -706,7 +708,7 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
                 getReportOptionsJson.put("reported_text", selectedReportMessage);
                 getReportOptionsJson.put("reported_id", mProductItem.getProductId());
                 getReportOptionsJson.put("userTimeZone", TimeZone.getDefault().getID());
-
+                getReportOptionsJson.put("comments",etReportComment.getText().toString());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -783,7 +785,7 @@ public class ItemDetailsFragment extends Fragment implements View.OnClickListene
                             .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     View view = inflater.inflate(R.layout.report_dialog, null);
                     reportOptionsRadioGroup = (LinearLayout) view.findViewById(R.id.radiogroup_report_dialog_options);
-
+                    etReportComment=(EditText) view.findViewById(R.id.et_add_comments);
                     submitReportOptionButton = (Button) view.findViewById(R.id.button_report_dialog_submit);
                     CardView closeButton = (CardView) view.findViewById(R.id.cardview_report_dialog_close);
                     closeButton.setOnClickListener(ItemDetailsFragment.this);

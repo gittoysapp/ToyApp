@@ -43,18 +43,18 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/txt_add_comments"
+            android:id="@+id/et_add_comments"
             android:layout_below="@+id/radiogroup_report_dialog_options"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:paddingTop="@dimen/space_5"
-            android:hint="Please enter the comments"
+            android:hint="Comments(optional)"
             android:gravity="start|left"
             android:layout_marginLeft="@dimen/space_15"
             android:layout_marginRight="@dimen/space_15"
             android:paddingLeft="@dimen/space_10"
             android:paddingRight="@dimen/space_10"
-            android:textColor="@color/app_light_grey"
+            android:textColor="@color/black"
             android:textColorHint="#DADADA"
             android:background="@drawable/rounded_edittext_2"
             android:textSize="@dimen/text_size_15" />
@@ -63,7 +63,7 @@
             android:id="@+id/button_report_dialog_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_add_comments"
+            android:layout_below="@+id/et_add_comments"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/space_20"
             android:layout_marginTop="@dimen/space_25"
